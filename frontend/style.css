@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --dark-blue: #0A1C3C;
+    --light-blue-bg: #EAF2F8; /* A very light blue/off-white */
+    --accent-blue: #2A8BF2; /* A brighter blue for accents like buttons/icons */
+    --text-color-dark: #333;
+    --text-color-light: #fff;
+    --input-border-color: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* A subtle background for the entire page */
+    overflow: hidden; /* Hide any overflow, especially for the wave effect */
+}
+
+.container {
+    display: flex;
+    width: 900px; /* Adjust as needed */
+    height: 500px; /* Adjust as needed */
+    border-radius: 20px;
+    box-shadow: 0 15px 30px var(--shadow-color);
+    overflow: hidden; /* Ensures rounded corners are respected */
+}
+
+/* Left Panel Styling */
+.left-panel {
+    flex: 1;
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative; /* For the background pattern */
+    overflow: hidden; /* To contain the generated pattern */
+}
+
+/* Background pattern for left panel */
+.left-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 100%),
+        linear-gradient(-45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 100%);
+    background-size: 40px 40px; /* Size of the squares */
+    opacity: 0.8; /* Adjust transparency of the pattern */
+}
+
+.left-panel-content {
+    text-align: center;
+    color: var(--text-color-light);
+    z-index: 1; /* Ensure content is above the pattern */
+    max-width: 300px;
+}
+
+.left-panel-content h1 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.left-panel-content p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.sign-in-btn {
+    background-color: transparent;
+    color: var(--text-color-light);
+    border: 2px solid var(--text-color-light);
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sign-in-btn:hover {
+    background-color: var(--text-color-light);
+    color: var(--dark-blue);
+}
+
+/* Right Panel Styling */
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.right-panel {
+    flex: 1;
+    background-color: var(--light-blue-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-panel-content {
+    position: relative;
+    z-index: 1;
+}
+
+.right-panel-content {
+    text-align: center;
+    color: var(--text-color-dark);
+    z-index: 2; /* Ensure content is above the wave */
+    position: relative; /* For z-indexing relative to wave */
+}
+
+.right-panel-content h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.social-icons {
+    margin-bottom: 25px;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid var(--input-border-color);
+    margin: 0 8px;
+    font-size: 1.2em;
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--accent-blue);
+    color: var(--text-color-light);
+    border-color: var(--accent-blue);
+}
+
+.or-text {
+    font-size: 0.9em;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+    width: 80%; /* Adjust width of input fields */
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-blue);
+    font-size: 1em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 45px; /* Add padding for icon */
+    border: 1px solid var(--input-border-color);
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--accent-blue);
+}
+
+.sign-up-btn {
+    background-color: var(--accent-blue);
+    color: var(--text-color-light);
+    border: none;
+    padding: 12px 40px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sign-up-btn:hover {
+    background-color: #206BB0; /* A slightly darker blue on hover */
+}
+
+/* Wave Background Effect */
+.wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cover the entire right panel */
+    overflow: hidden;
+    z-index: 1; /* Behind the content */
+    opacity: 0.7; /* Adjust transparency as needed */
+}
+
+.wave-background::before,
+.wave-background::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 200%; /* Make them wider to create the wave effect */
+    height: 200px; /* Height of the wave curve */
+    background-color: var(--light-blue-bg); /* Match right panel background */
+    z-index: 1;
+}
+
+/* Specific wave shapes - using border-radius to create curves */
+.wave-background::before {
+    top: -100px; /* Adjust to position the curve */
+    transform-origin: left bottom;
+    transform: rotate(3deg); /* Slight rotation for a more dynamic look */
+    border-radius: 50% 50% 0 0 / 100px 100px 0 0; /* Creates an S-like curve */
+    background-color: rgba(188, 230, 240, 0.4); /* Lighter, more transparent wave */
+    animation: waveAnimation 15s linear infinite alternate; /* Slower animation */
+}
+
+.wave-background::after {
+    top: -50px; /* Offset for the second wave */
+    transform-origin: right bottom;
+    transform: rotate(-5deg); /* Different rotation */
+    border-radius: 50% 50% 0 0 / 120px 120px 0 0;
+    background-color: rgba(150, 200, 230, 0.6); /* Slightly darker, more opaque wave */
+    animation: waveAnimation 20s linear infinite alternate-reverse; /* Different speed and direction */
+}
+
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0) rotate(3deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(-3deg);
+    }
+}
+
+
+/* Basic Responsiveness - Adjust as needed */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        min-height: 80vh;
+    }
+
+    .left-panel, .right-panel {
+        flex: none;
+        width: 100%;
+        padding: 30px;
+    }
+
+    .left-panel {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .right-panel {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .left-panel-content h1 {
+        font-size: 1.8em;
+    }
+
+    .right-panel-content h2 {
+        font-size: 1.8em;
+    }
+
+    .input-group {
+        width: 90%;
+    }
+
+    .wave-background {
+        display: none; /* Hide complex wave on smaller screens for performance/simplicity */
+    }
+}
+
+@media (max-width: 480px) {
+    .left-panel-content h1 {
+        font-size: 1.5em;
+    }
+
+    .left-panel-content p {
+        font-size: 0.85em;
+    }
+
+    .sign-in-btn, .sign-up-btn {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+    }
+}

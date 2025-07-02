@@ -1,0 +1,13 @@
+# Ignore Node.js dependencies
+backend/node_modules/
+
+# Ignore environment files
+backend/.env
+
+# Ignore build folders (if using React/Vite)
+frontend/dist/
+frontend/node_modules/
+
+# System/Editor files
+.DS_Store
+*.log
