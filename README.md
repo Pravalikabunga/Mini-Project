@@ -75,7 +75,7 @@ The backend can be deployed to services like:
    - Verify backend server is running
    - Ensure the fetch URL in script.js matches your backend URL
 
-### Future Enhancements
+## Future Enhancements
 1. Add user authentication
 2. Implement email verification
 3. Add password reset functionality
