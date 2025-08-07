@@ -2,7 +2,7 @@
 This project is a simple full-stack web application with a frontend for user registration and a backend for storing user data in MongoDB.
 
 ## Project Demo 
- [Click Here for Demo] (https://mini-project-eta-lime.vercel.app/)
+ [Click Here for Demo](https://mini-project-eta-lime.vercel.app/)
 
 ## Backend 
 ### Technologies
