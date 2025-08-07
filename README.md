@@ -19,7 +19,7 @@ This project is a simple full-stack web application with a frontend for user reg
 - Response: JSON object with success status and message
 
 
-## Frontend Documentation
+## Frontend 
 ### Technologies
 - HTML5
 - CSS3
