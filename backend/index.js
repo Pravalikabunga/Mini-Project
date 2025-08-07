@@ -36,25 +36,32 @@ const User = mongoose.model('User', userSchema);
 // --- Routes ---
 
 // POST route to receive and store data in MongoDB
-app.post('/submit', (req, res) => {
+app.post('/submit', async (req, res) => {
   const { name, email } = req.body;
-  
+
+  // Basic validation
   if (!name || !email) {
     return res.status(400).json({ error: 'Name and email are required' });
   }
-  
-  // Save data or do something with it here
 
-  res.status(200).json({ message: 'Submission received successfully' });
+  try {
+    // Save to MongoDB
+    const newUser = new User({ name, email });
+    await newUser.save();
+
+    res.status(200).json({ success: true, message: 'User registered successfully' });
+  } catch (error) {
+    console.error('Error saving user:', error);
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
 });
 
-
-// GET route to test server
+// GET route to check server is working
 app.get('/', (req, res) => {
     res.send('Backend is up and running!');
 });
 
 // --- Start Server ---
 app.listen(PORT, () => {
-    console.log(`Server listening on http://localhost:${PORT}`);
+    console.log(`🚀 Server listening on http://localhost:${PORT}`);
 });
