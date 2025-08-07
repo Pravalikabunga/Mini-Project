@@ -1,7 +1,7 @@
 ## Overview
 This project is a simple full-stack web application with a frontend for user registration and a backend for storing user data in MongoDB.
 
-# Backend 
+## Backend 
 ### Technologies
 - Node.js
 - Express.js
@@ -19,7 +19,7 @@ This project is a simple full-stack web application with a frontend for user reg
 - Response: JSON object with success status and message
 
 
-# Frontend Documentation
+## Frontend Documentation
 ### Technologies
 - HTML5
 - CSS3
@@ -37,7 +37,7 @@ This project is a simple full-stack web application with a frontend for user reg
    - Using Node.js: npx http-server -p 8000
 3. Access the application at http://localhost:8000
 
-# Deployment
+## Deployment
 ### Backend
 The backend can be deployed to services like:
 - Render
@@ -51,26 +51,26 @@ The backend can be deployed to services like:
 - Vercel
 - Any static site hosting service
 
-# Environment Variables
+## Environment Variables
 ### Backend requires the following environment variables:
 - MONGODB_URI: MongoDB connection string
 
-# Dependencies
+## Dependencies
 ### Backend
 - express: ^4.17.1
 - mongoose: ^6.0.0
 - cors: ^2.8.5
 - dotenv: ^10.0.0
 
-# Troubleshooting
-## Common Issues
-### 1. CORS Errors:
+## Troubleshooting
+### Common Issues
+#### 1. CORS Errors:
    - Make sure to enable CORS in the backend
    - Use a local server instead of opening the HTML file directly
-### 2. Database Connection Issues:
+#### 2. Database Connection Issues:
    - Verify your MongoDB connection string
    - Ensure MongoDB Atlas has your IP address whitelisted
-### 3. Form Submission Fails:
+#### 3. Form Submission Fails:
    - Check browser console for errors
    - Verify backend server is running
    - Ensure the fetch URL in script.js matches your backend URL
